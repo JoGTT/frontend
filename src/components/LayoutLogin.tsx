@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import dosLineas from '../assets/dosLineas';
 import XLogo from '../assets/X';
 import SedegesLogo from './SedegesLogo';
 
@@ -24,7 +23,7 @@ const LayoutLogin: React.FC<{ children?: React.ReactNode }> = ({ children }) => 
             aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
           >
             <span className="block">
-              {menuOpen ? <XLogo width={28} height={28} fill="var(--color-punzo-600)" /> : <dosLineas width={28} height={28} fill="var(--color-punzo-600)" />}
+              {menuOpen ? <XLogo width={28} height={28} fill="var(--color-punzo-600)" /> : <span>☰</span>}
             </span>
           </button>
           <div className={`mt-20 flex-1 flex flex-col items-center ${menuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'} transition-opacity duration-300`}>

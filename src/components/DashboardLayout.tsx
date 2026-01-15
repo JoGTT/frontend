@@ -145,7 +145,6 @@ const DashboardLayout: React.FC = () => {
               {activeSection === 'registros' && <RegistrosPage onHojaSelected={handleHojaSelected} />}
               {activeSection === 'hoja-detalle' && selectedHoja && (
                 <HojaRutaDetalleView 
-                  hoja={selectedHoja} 
                   onBack={handleBackToRegistros}
                 />
               )}

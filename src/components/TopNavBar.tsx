@@ -34,7 +34,7 @@ const TopNavBar: React.FC<TopNavBarProps> = ({ user, onSelectSection, activeSect
   const [searchLoading, setSearchLoading] = useState(false);
   const [searchError, setSearchError] = useState('');
   const [showDropdown, setShowDropdown] = useState(false);
-  const hideTimer = useRef<NodeJS.Timeout | null>(null);
+  const hideTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const dropdownHover = useRef(false);
 
   useEffect(() => {

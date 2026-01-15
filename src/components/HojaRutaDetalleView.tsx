@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
-import { useToast } from './ToastNotifications';
+
 
 interface HojaRuta {
   id: number;
@@ -28,7 +28,7 @@ const HojaRutaDetalleView: React.FC<Props> = ({ onBack }) => {
   const [hojaCompleta, setHojaCompleta] = useState<HojaRuta | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const { toast } = useToast();
+  const toast = { success: (msg: string) => console.log(msg), error: (msg: string) => console.error(msg) };
 
   useEffect(() => {
     fetchHojaCompleta();
