@@ -1,4 +1,3 @@
-import React from "react";
 import ModernDashboard from "./ModernDashboard";
 
 const Dashboard = () => {

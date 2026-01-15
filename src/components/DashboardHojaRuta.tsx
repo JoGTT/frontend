@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useAuth } from "../contexts/AuthContext";
-import HojaRutaDetalleViewNuevo from "./HojaRutaDetalleViewNuevo";
+import HojaRutaDetalleView from "./HojaRutaDetalleView";
 
 const DashboardHojaRuta: React.FC = () => {
   const { id } = useParams();
@@ -36,8 +36,7 @@ const DashboardHojaRuta: React.FC = () => {
   if (!hoja) return <div className="p-8 text-center text-[var(--color-gris-600)]">Sin datos</div>;
 
   return (
-    <HojaRutaDetalleViewNuevo
-      hoja={hoja}
+    <HojaRutaDetalleView
       onBack={() => navigate("/registros")}
     />
   );

@@ -6,12 +6,12 @@ import NotificationIcon from '../assets/notification';
 import LupayIcon from '../assets/lupay';
 import CerrarLogo from '../assets/cerrar';
 import NuevaHojaRuta from './NuevaHojaRuta';
-import RegistrosPage from '../pages/RegistrosPageClean';
+import RegistrosPage from '../pages/RegistrosPage';
 import HistorialPage from '../pages/HistorialPage';
 import NotificacionesPage from '../pages/NotificacionesPage';
 import ModernDashboard from './ModernDashboard';
 import HojaRutaDetalleView from './HojaRutaDetalleView';
-import EnviarPageReestructurado from '../pages/EnviarPageReestructurado';
+import EnviarPage from '../pages/EnviarPage';
 import GestionEnvios from '../pages/GestionEnvios';
 import { useSearch } from '../contexts/SearchContext';
 import { useAuth } from '../contexts/AuthContext';
@@ -151,7 +151,7 @@ const DashboardLayout: React.FC = () => {
               )}
               {activeSection === 'historial' && <HistorialPage />}
               {activeSection === 'notificaciones' && <NotificacionesPage />}
-              {activeSection === 'enviar' && <EnviarPageReestructurado />}
+              {activeSection === 'enviar' && <EnviarPage />}
               {activeSection === 'gestion-envios' && <GestionEnvios />}
               {activeSection === 'inicio' && <ModernDashboard onNavigate={setActiveSection} />}
             </AnimatedSection>

@@ -3,7 +3,7 @@ import Login from '../components/Login';
 import Dashboard from '../components/Dashboard';
 import NuevaHojaRuta from '../components/NuevaHojaRuta';
 import ProtectedRoute from '../components/ProtectedRoute';
-import RegistrosPage from '../pages/RegistrosPageClean';
+import RegistrosPage from '../pages/RegistrosPage';
 import HistorialPage from '../pages/HistorialPage';
 import NotificacionesPage from '../pages/NotificacionesPage';
 import EnviarPage from '../pages/EnviarPage';
