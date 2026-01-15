@@ -1,0 +1,46 @@
+import React, { useEffect, useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useAuth } from "../contexts/AuthContext";
+import HojaRutaDetalleViewNuevo from "./HojaRutaDetalleViewNuevo";
+
+const DashboardHojaRuta: React.FC = () => {
+  const { id } = useParams();
+  const { token } = useAuth();
+  const navigate = useNavigate();
+  const [hoja, setHoja] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    const fetchHoja = async () => {
+      setLoading(true);
+      setError("");
+      try {
+        const res = await axios.get(`http://localhost:3001/api/hojas-ruta/${id}`, {
+          headers: { Authorization: `Bearer ${token}` }
+        });
+        const payload = res.data?.hoja || res.data?.data || res.data;
+        setHoja(payload);
+      } catch (err) {
+        setError("No se pudo cargar la hoja de ruta.");
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchHoja();
+  }, [id, token]);
+
+  if (loading) return <div className="p-8 text-center text-[var(--color-gris-600)]">Cargando...</div>;
+  if (error) return <div className="p-8 text-center text-red-500">{error}</div>;
+  if (!hoja) return <div className="p-8 text-center text-[var(--color-gris-600)]">Sin datos</div>;
+
+  return (
+    <HojaRutaDetalleViewNuevo
+      hoja={hoja}
+      onBack={() => navigate("/registros")}
+    />
+  );
+};
+
+export default DashboardHojaRuta;

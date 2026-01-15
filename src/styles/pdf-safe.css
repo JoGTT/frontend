@@ -1,0 +1,84 @@
+/* CSS específico para generación de PDFs - Sin oklch() */
+.pdf-safe {
+  background: #ffffff !important;
+  color: #222222 !important;
+  font-family: Arial, sans-serif !important;
+}
+
+.pdf-table {
+  border-collapse: collapse !important;
+  width: 100% !important;
+  border: 1px solid #000000 !important;
+}
+
+.pdf-cell {
+  border: 1px solid #000000 !important;
+  padding: 4px !important;
+  font-size: 10px !important;
+}
+
+.pdf-cell-header {
+  border: 1px solid #000000 !important;
+  background-color: #f3f4f6 !important;
+  padding: 4px !important;
+  font-weight: bold !important;
+  font-size: 10px !important;
+}
+
+.pdf-checkbox-section {
+  display: flex !important;
+  align-items: center !important;
+  margin-bottom: 2px !important;
+}
+
+.pdf-checkbox {
+  margin-right: 4px !important;
+}
+
+.pdf-text-center {
+  text-align: center !important;
+}
+
+.pdf-text-xs {
+  font-size: 9px !important;
+}
+
+.pdf-text-sm {
+  font-size: 11px !important;
+}
+
+.pdf-font-bold {
+  font-weight: bold !important;
+}
+
+.pdf-border-gray {
+  border: 1px solid #9ca3af !important;
+}
+
+.pdf-bg-gray {
+  background-color: #f3f4f6 !important;
+}
+
+.pdf-min-h-10 {
+  min-height: 40px !important;
+}
+
+.pdf-min-h-20 {
+  min-height: 80px !important;
+}
+
+/* Reset para evitar conflictos con TailwindCSS 4 */
+.pdf-container * {
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+/* Grid para secciones */
+.pdf-grid-2 {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+}
+
+.pdf-space-y-1 > * + * {
+  margin-top: 2px !important;
+}

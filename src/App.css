@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+/* App-level tweaks: delegamos paleta en index.css y dejamos limpio para que tome el tema oscuro */
+body.app-minimalista {
+  background: radial-gradient(circle at 10% 20%, rgba(34,36,45,0.9), #0f1116 55%), #0f1116;
+  color: #e8e8e3;
+}

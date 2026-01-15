@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* Paleta Gris + Morado Corporativa */
+  /* Grises Base - Tonos fríos y profesionales */
+  --color-fondo-casi-blanco: #F5F3F8;
+  --color-fondo-blanco: #FFFFFF;
+  --color-gris-100: #F3F0F8;
+  --color-gris-200: #E8E5F1;
+  --color-gris-300: #D5D0E0;
+  --color-gris-400: #B8B0C8;
+  --color-gris-500: #9A91B0;
+  --color-gris-600: #7A6F8A;
+  --color-gris-700: #5A4E68;
+  --color-gris-800: #3D3348;
+  --color-gris-900: #2A1F33;
+  
+  /* Paleta Morada - Tonos complementarios */
+  --color-morado-50: #F8F5FC;
+  --color-morado-100: #E9E0F7;
+  --color-morado-200: #D9CAF0;
+  --color-morado-300: #C5B0E8;
+  --color-morado-400: #A885DC;
+  --color-morado-500: #8B5CF6;
+  --color-morado-600: #7C3AED;
+  --color-morado-700: #6D28D9;
+  --color-morado-800: #5B21B6;
+  --color-morado-900: #4C1D95;
+  
+  /* Colores principales - Morado Premium */
+  --color-primary: #8B5CF6;
+  --color-primary-dark: #7C3AED;
+  --color-primary-light: #A78BFA;
+  
+  /* Colores secundarios - Gris + Morado oscuro */
+  --color-secondary: #5A4E68;
+  --color-secondary-light: #7A6F8A;
+  --color-secondary-dark: #3D3348;
+  
+  /* Colores de prioridad */
+  --color-priority-critical: #E63946;
+  --color-priority-high: #F77F00;
+  --color-priority-medium: #8B5CF6;
+  --color-priority-low: #06A77D;
+  
+  /* Colores para estados */
+  --color-success: #06A77D;
+  --color-warning: #F77F00;
+  --color-error: #E63946;
+  --color-info: #8B5CF6;
+  
+  /* Colores antiguos (compatibilidad) */
+  --color-slate-dark: #5A4E68;
+  --color-slate-medium: #7A6F8A;
+  --color-slate-light: #9A91B0;
+  --color-vino: #8B5CF6;
+  --color-vino-claro: #A78BFA;
+  --color-vino-oscuro: #7C3AED;
+  --color-fondo-oscuro: #2A1F33;
+  --color-fondo-claro: #F5F3F8;
+  --color-gris-oscuro: #3D3348;
+  --color-blanco: #FFFFFF;
+}
+
+/* Fondo global unificado: mismo degradado azul oscuro usado en Progreso */
+body, #root {
+  background: radial-gradient(circle at 20% 20%, rgba(16,22,38,0.75), rgba(11,16,33,0.95)), linear-gradient(135deg, #0b1021 0%, #0f172a 50%, #0b0f1c 100%);
+  color: #e8e8e3;
+  min-height: 100vh;
+  font-family: 'Outfit', 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+h1, h2, h3 {
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 700;
+}
+
+p, span, li, input, button, label, div {
+  text-transform: none;
+  font-weight: 500;
+}
+
+.app-bg {
+  background: transparent;
+}
+
+/* Contenedores principales con superficies oscuras y bordes sutiles */
+header, aside, main, footer, .app-root {
+  background: rgba(22,24,33,0.92) !important;
+  box-shadow: 0 14px 40px rgba(0,0,0,0.35) !important;
+  border: 1px solid rgba(255,255,255,0.04) !important;
+}
+
+/* Cards con relieve sutil y acento dorado ligero */
+.card {
+  background: linear-gradient(145deg, rgba(28,30,40,0.96), rgba(20,21,28,0.96));
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+  border: 1px solid rgba(200,180,130,0.08);
+}
+
+.card-soft {
+  background: rgba(32,34,44,0.9);
+  border-radius: 12px;
+  padding: 12px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.muted {
+  color: #a9a9a3;
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(-6px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Bordes con esquinas simples y visibles */
+.bracket-border {
+  position: relative;
+  border: 2px solid rgba(200,180,130,0.45);
+  border-right: none;
+  border-bottom: none;
+}
+
+.bracket-border::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 38px;
+  height: 2px;
+  background: rgba(200,180,130,0.55);
+}
+
+.bracket-border::before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 2px;
+  height: 38px;
+  background: rgba(200,180,130,0.55);
+}
+
+/* Solo línea inferior para componentes internos */
+.border-bottom-line {
+  border-bottom: 2px solid rgba(255,255,255,0.06);
+}
