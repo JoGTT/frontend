@@ -22,12 +22,14 @@ export const API_ENDPOINTS = {
   LOCACIONES: `${API_URL}/api/locaciones`,
   
   ENVIOS: `${API_URL}/api/enviar`,
+  ENVIAR: `${API_URL}/api/enviar`,
   ENVIOS_ESTADO: (id: number) => `${API_URL}/api/enviar/${id}/estado`,
   DESTINOS: `${API_URL}/api/enviar/destinos`,
   DESTINOS_PUBLIC: `${API_URL}/api/destinos`,
   
   NOTIFICACIONES: `${API_URL}/api/notificaciones`,
-  HISTORIAL: `${API_URL}/api/historial`
+  HISTORIAL: `${API_URL}/api/historial`,
+  HISTORIAL_EVENTOS: `${API_URL}/api/historial/eventos`
 };
 
 export const apiConfig = {

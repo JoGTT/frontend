@@ -18,7 +18,8 @@ const DashboardHojaRuta: React.FC = () => {
       setLoading(true);
       setError("");
       try {
-        const res = await axios.get(API_ENDPOINTS.HOJAS_RUTA_DETALLE(id), {
+        const hojaId = parseInt(id || '0', 10);
+        const res = await axios.get(API_ENDPOINTS.HOJAS_RUTA_DETALLE(hojaId), {
           headers: { Authorization: `Bearer ${token}` }
         });
         const payload = res.data?.hoja || res.data?.data || res.data;
