@@ -88,7 +88,7 @@ const NotificacionesPage = () => {
       // Obtener notificaciones locales primero
       const notificacionesLocales = getNotificacionesLocales();
       
-      const response = await axios.get('http://localhost:3001/api/hojas-ruta/dashboard/tiempo-real', {
+      const response = await axios.get(API_ENDPOINTS.HOJAS_RUTA_DASHBOARD, {
         headers: { Authorization: `Bearer ${token}` }
       });
       
@@ -153,7 +153,7 @@ const NotificacionesPage = () => {
   // Marcar notificación como leída
   const marcarComoLeida = async (notifId: number) => {
     try {
-      await axios.patch(`http://localhost:3001/api/notificaciones/${notifId}/leer`, {}, {
+      await axios.patch(`${API_ENDPOINTS.NOTIFICACIONES}/${notifId}/leer`, {}, {
         headers: { Authorization: `Bearer ${token}` }
       });
       
@@ -177,7 +177,7 @@ const NotificacionesPage = () => {
   // Marcar todas como leídas
   const marcarTodasLeidas = async () => {
     try {
-      await axios.patch('http://localhost:3001/api/notificaciones/marcar-todas-leidas', {}, {
+      await axios.patch(`${API_ENDPOINTS.NOTIFICACIONES}/marcar-todas-leidas`, {}, {
         headers: { Authorization: `Bearer ${token}` }
       });
       

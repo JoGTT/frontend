@@ -61,7 +61,7 @@ const ModernDashboard: React.FC<Props> = ({ onNavigate }) => {
     if (!silent) setLoading(true);
 
     try {
-      const response = await axios.get('http://localhost:3001/api/hojas-ruta', {
+      const response = await axios.get(API_ENDPOINTS.HOJAS_RUTA, {
         headers: { Authorization: `Bearer ${token}` },
       });
 

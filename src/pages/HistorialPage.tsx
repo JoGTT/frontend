@@ -24,7 +24,7 @@ const HistorialPage: React.FC = () => {
     if (!token) return;
     try {
       setLoading(true);
-      const res = await axios.get('http://localhost:3001/api/historial/eventos', {
+      const res = await axios.get(API_ENDPOINTS.HISTORIAL_EVENTOS, {
         headers: { Authorization: `Bearer ${token}` }
       });
 

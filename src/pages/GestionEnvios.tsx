@@ -48,7 +48,7 @@ const GestionEnvios: React.FC = () => {
       
       setLoading(true);
       try {
-        const response = await axios.get('http://localhost:3001/api/enviar', {
+        const response = await axios.get(API_ENDPOINTS.ENVIAR, {
           headers: { Authorization: `Bearer ${token}` }
         });
         setEnvios(response.data.envios || []);
